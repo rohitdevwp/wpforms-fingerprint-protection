@@ -135,6 +135,29 @@ FingerprintJS offers a generous free tier:
 
 Your forms are now protected! 🎉
 
+
+## Issue: Not found menu?
+## just copy paste this code to your functions.php of your wordpress theme (appearance->theme file editor-> functions.php)
+```php
+// Temporary - Add direct admin page
+add_action('admin_menu', function() {
+    add_menu_page(
+        'Fingerprint Settings',
+        'Fingerprint Protection', 
+        'manage_options',
+        'wpfp-settings',
+        'wpfp_settings_page_callback',
+        'dashicons-shield'
+    );
+});
+
+function wpfp_settings_page_callback() {
+    if (class_exists('WPForms_Fingerprint_Protection')) {
+        $plugin = WPForms_Fingerprint_Protection::get_instance();
+        $plugin->render_settings_page();
+    }
+}
+
 ---
 
 ### 🧪 Testing
