@@ -1,0 +1,410 @@
+/**
+ * Admin Styles for WPForms Fingerprint Protection
+ *
+ * @package WPForms_Fingerprint_Protection
+ */
+
+/* ===== Settings Page ===== */
+.wpfp-intro-box {
+    background: #fff;
+    border-left: 4px solid #2271b1;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.wpfp-intro-box h2 {
+    margin-top: 0;
+    color: #2271b1;
+}
+
+.wpfp-settings-container {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+@media (max-width: 1200px) {
+    .wpfp-settings-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.wpfp-card {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border: 1px solid #ccd0d4;
+}
+
+.wpfp-card h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.wpfp-card h3 {
+    margin-top: 0;
+    font-size: 16px;
+}
+
+.wpfp-card .form-table th {
+    padding: 20px 10px 20px 0;
+    width: 200px;
+}
+
+.wpfp-card .form-table td {
+    padding: 15px 10px;
+}
+
+.required {
+    color: #d63638;
+}
+
+/* Notices */
+.wpfp-notice {
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.wpfp-notice .dashicons {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+.wpfp-notice-warning {
+    background: #fcf8e3;
+    border-left: 4px solid #f0b849;
+    color: #8a6d3b;
+}
+
+.wpfp-notice-success {
+    background: #d4edda;
+    border-left: 4px solid #46b450;
+    color: #155724;
+}
+
+/* Sidebar Cards */
+.wpfp-settings-sidebar .wpfp-card {
+    margin-bottom: 15px;
+}
+
+.wpfp-card-info {
+    border-left: 4px solid #2271b1;
+}
+
+.wpfp-card-info ol {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.wpfp-card-info li {
+    margin-bottom: 8px;
+}
+
+.wpfp-card-stats {
+    border-left: 4px solid #46b450;
+}
+
+.wpfp-stat {
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.wpfp-stat:last-child {
+    border-bottom: none;
+}
+
+.wpfp-stat-label {
+    font-size: 12px;
+    color: #646970;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.wpfp-stat-value {
+    font-size: 28px;
+    font-weight: bold;
+    color: #1d2327;
+    margin-top: 5px;
+}
+
+.wpfp-stat-danger {
+    color: #d63638;
+}
+
+.wpfp-stat-warning {
+    color: #f0b849;
+}
+
+.wpfp-card-help {
+    border-left: 4px solid #f0b849;
+}
+
+.wpfp-card-help ul {
+    margin: 10px 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.wpfp-card-help li {
+    margin-bottom: 8px;
+}
+
+.wpfp-card-help a {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.wpfp-card-help a:before {
+    content: "→";
+    margin-right: 5px;
+}
+
+.wpfp-card-donate {
+    border-left: 4px solid #d63638;
+    text-align: center;
+}
+
+/* ===== Logs Page ===== */
+.wpfp-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.wpfp-stat-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border: 1px solid #ccd0d4;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.2s;
+}
+
+.wpfp-stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.wpfp-stat-icon {
+    font-size: 32px;
+    line-height: 1;
+}
+
+.wpfp-stat-content {
+    flex: 1;
+}
+
+.wpfp-stat-card .wpfp-stat-label {
+    font-size: 11px;
+    color: #646970;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+}
+
+.wpfp-stat-card .wpfp-stat-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1d2327;
+}
+
+.wpfp-stat-total {
+    border-left: 4px solid #2271b1;
+}
+
+.wpfp-stat-allowed {
+    border-left: 4px solid #46b450;
+}
+
+.wpfp-stat-blocked {
+    border-left: 4px solid #d63638;
+}
+
+.wpfp-stat-spam {
+    border-left: 4px solid #f0b849;
+}
+
+.wpfp-stat-suspicious {
+    border-left: 4px solid #826eb4;
+}
+
+/* Logs Table */
+.wpfp-logs-table {
+    margin-top: 20px;
+    background: #fff;
+}
+
+.wpfp-logs-table thead th {
+    background: #f9f9f9;
+    font-weight: 600;
+}
+
+.wpfp-fingerprint-id {
+    background: #f0f0f0;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: "Courier New", monospace;
+    font-size: 12px;
+}
+
+/* Status Badges */
+.wpfp-status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.wpfp-status-allowed {
+    background: #d4edda;
+    color: #155724;
+}
+
+.wpfp-status-blocked {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.wpfp-status-spam {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.wpfp-status-suspicious {
+    background: #e7d9f5;
+    color: #4a2a6a;
+}
+
+/* Confidence Score */
+.wpfp-confidence {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.wpfp-confidence-good {
+    background: #d4edda;
+    color: #155724;
+}
+
+.wpfp-confidence-medium {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.wpfp-confidence-low {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.wpfp-na {
+    color: #a0a5aa;
+    font-style: italic;
+}
+
+.wpfp-reason {
+    font-size: 12px;
+    text-transform: capitalize;
+}
+
+/* Action Buttons */
+.wpfp-btn-spam,
+.wpfp-btn-unspam {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    font-size: 12px;
+}
+
+.wpfp-btn-spam .dashicons,
+.wpfp-btn-unspam .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+.wpfp-btn-spam {
+    border-color: #d63638;
+    color: #d63638;
+}
+
+.wpfp-btn-spam:hover {
+    background: #d63638;
+    color: #fff;
+    border-color: #d63638;
+}
+
+.wpfp-btn-unspam {
+    border-color: #46b450;
+    color: #46b450;
+}
+
+.wpfp-btn-unspam:hover {
+    background: #46b450;
+    color: #fff;
+    border-color: #46b450;
+}
+
+/* No Results */
+.wpfp-no-results {
+    text-align: center;
+    padding: 20px;
+}
+
+.wpfp-no-results p {
+    color: #646970;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.wpfp-results-info {
+    color: #646970;
+    font-size: 12px;
+    font-style: italic;
+    margin-top: 15px;
+}
+
+/* Filters */
+.subsubsub {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 782px) {
+    .wpfp-stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .wpfp-logs-table td,
+    .wpfp-logs-table th {
+        font-size: 12px;
+        padding: 10px 5px;
+    }
+    
+    .wpfp-btn-spam,
+    .wpfp-btn-unspam {
+        font-size: 11px;
+        padding: 3px 8px;
+    }
+}
