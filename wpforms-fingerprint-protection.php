@@ -1,13 +1,13 @@
 <?php
 /**
  * Plugin Name: WPForms Fingerprint Protection
- * Plugin URI: https://github.com/rohitdev/wpforms-fingerprint-protection
+ * Plugin URI: https://github.com/rohitdevwp/wpforms-fingerprint-protection
  * Description: Prevent spam and fake form submissions using FingerprintJS device fingerprinting technology.
  * Version: 1.0.0
  * Requires at least: 5.0
  * Requires PHP: 7.2
  * Author: Rohit Dev
- * Author URI: https://yourwebsite.com
+ * Author URI: https://kovisys.com
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: wpforms-fingerprint-protection
@@ -65,7 +65,7 @@ class WPForms_Fingerprint_Protection {
         ?>
         <div class="notice notice-error">
             <p>
-                <strong>WPForms Fingerprint Protection</strong> requires WPForms plugin to be installed and activated.
+                <strong>WPForms Fingerprint Protection</strong> requires WPForms plugin to be installed and activated. (If Not Installed)
                 <a href="<?php echo esc_url(admin_url('plugin-install.php?s=wpforms&tab=search&type=term')); ?>">Install WPForms Now</a>
             </p>
         </div>
@@ -164,10 +164,36 @@ class WPForms_Fingerprint_Protection {
         }
     }
     
-    public function add_admin_menu() {
-        add_submenu_page('wpforms-overview', 'Fingerprint Settings', 'Fingerprint Protection', 'manage_options', 'wpfp-settings', array($this, 'render_settings_page'));
-        add_submenu_page('wpforms-overview', 'Fingerprint Logs', 'Fingerprint Logs', 'manage_options', 'wpfp-logs', array($this, 'render_logs_page'));
-    }
+   public function add_admin_menu() {
+    // Create standalone menu (not under WPForms)
+    add_menu_page(
+        'Fingerprint Protection',           // Page title
+        'Fingerprint Protection',           // Menu title
+        'manage_options',                   // Capability
+        'wpfp-settings',                    // Menu slug
+        array($this, 'render_settings_page'), // Callback
+        'dashicons-shield',                 // Icon
+        30                                  // Position
+    );
+    
+    add_submenu_page(
+        'wpfp-settings',                    // Parent slug
+        'Settings',                         // Page title
+        'Settings',                         // Menu title
+        'manage_options',                   // Capability
+        'wpfp-settings',                    // Menu slug (same as parent)
+        array($this, 'render_settings_page') // Callback
+    );
+    
+    add_submenu_page(
+        'wpfp-settings',                    // Parent slug
+        'Logs',                             // Page title  
+        'Logs',                             // Menu title
+        'manage_options',                   // Capability
+        'wpfp-logs',                        // Menu slug
+        array($this, 'render_logs_page')    // Callback
+    );
+}
     
     public function render_settings_page() {
         if (!current_user_can('manage_options')) {
