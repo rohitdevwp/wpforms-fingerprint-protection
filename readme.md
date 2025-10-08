@@ -158,7 +158,7 @@ function wpfp_settings_page_callback() {
     }
 }
 
----
+```
 
 ### 🧪 Testing
 
