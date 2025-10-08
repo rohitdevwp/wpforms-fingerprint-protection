@@ -147,7 +147,8 @@ add_action('admin_menu', function() {
         'manage_options',
         'wpfp-settings',
         'wpfp_settings_page_callback',
-        'dashicons-shield'
+        'dashicons-shield',
+3
     );
 });
 
